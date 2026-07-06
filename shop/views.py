@@ -8,48 +8,63 @@ movies = [
         "id": 1,
         "title": "Pulp Fiction",
         "year": 1994,
-        "price": 79
+        "price": 79,
+        "description": "A nonlinear crime story about intersecting lives of criminals in Los Angeles.",
+        "rating": 8.5,
+        "isInStock": True
     },
     {
         "id": 2,
         "title": "Kill Bill: Vol. 1",
         "year": 2003,
-        "price": 69
+        "price": 69,
+        "description": "A revenge-driven assassin embarks on a brutal mission against her former team.",
+        "rating": 6.2,
+        "isInStock": False
     },
     {
         "id": 3,
         "title": "The Hateful Eight",
         "year": 2015,
-        "price": 89
+        "price": 89,
+        "description": "Strangers trapped in a cabin during a blizzard reveal hidden motives and tensions.",
+        "rating": 8.8,
+        "isInStock": True
     },
     {
         "id": 4,
         "title": "Inglourious Basterds",
         "year": 2009,
-        "price": 89
+        "price": 89,
+        "description": "A group of Jewish-American soldiers plans to assassinate Nazi leaders in WWII France.",
+        "rating": 10.0,
+        "isInStock": True
     },
     {
         "id": 5,
         "title": "Django Unchained",
         "year": 2012,
-        "price": 99
+        "price": 99,
+        "description": "A freed slave teams up with a bounty hunter to rescue his wife from a plantation owner.",
+        "rating": 9.5,
+        "isInStock": True
     }
 ]
 
 def index(request):
-    return HttpResponse("<h1>Here will be THE MAIN PAGE</h1>")
+    return render(request, "shop/home.html")
 
 def about(request):
-    return HttpResponse("<h1>Here will be ABOUT PAGE</h1>")
+    return render(request, "shop/about.html")
 
-def contact(request):
-    return HttpResponse("<h1>Here will be CONTACT PAGE</h1>")
+def contacts(request):
+    return render(request, "shop/contacts.html")
 
 def product_list(request):
-    text = f"<h1>The movies you can rent:</h1> <br>"
-    for m in movies:
-        text += f"{m['title']}: {m['price']} CZK <br>"
-    return HttpResponse(text)
+    context = {
+        "movies": movies
+        }
+    return render(request, 'shop/products.html', context)
 
 def product_detail(request, pk):
     for m in movies:
@@ -58,10 +73,16 @@ def product_detail(request, pk):
     return HttpResponse("<h1>Movie not found!</h1>")
 
 def login_view(request):
-    return HttpResponse("<h1>Here will be LOGIN FORM</h1>")
+    return render(request, "shop/login.html")
 
 def register_view(request):
-    return HttpResponse("<h1>Here will be REGISTRATION FORM</h1>")
+    return render(request, "shop/registration.html")
 
 def logout_view(request):
     return HttpResponse("<h1>Here will be LOGOUT PAGE</h1>")
+
+def cart(request):
+    return render(request, "shop/cart.html")
+
+def user_cabinet(request):
+    return render(request, "shop/user_cabinet.html")

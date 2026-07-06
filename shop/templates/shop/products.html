@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+
+{% block main %}
+     <h1 class="pageTitle">Products</h1>
+     <ul class="productsList">
+          {% for m in movies %}
+               <li class="productItem">
+                    <h3 class="productTitle">{{m.title}}</h3>
+                    <span class="productYear">{{m.year}}</span>
+                    <p class="productDescription">{{m.description}}</p>
+
+                    <span class="productRating">Rating: {{m.rating}}</span>
+                    {% if m.isInStock %}
+                         <span class="productPrice">{{m.price}} CZK</span>
+                    {% else %}
+                         <span class="outOfStock">Not available</span>
+                    {% endif %}
+                    <a class="productLink" href="{% url 'product_detail' pk=m.id%}">See closer</a>
+               </li>
+          {% empty %}
+            <h2>Sorry, no movies available now...</h2>
+          {% endfor %}
+     </ul>
+{% endblock main %}

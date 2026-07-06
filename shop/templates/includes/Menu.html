@@ -1,0 +1,16 @@
+{% load static %}
+
+<nav>
+    <ul class="headerNavList">
+        <li><a class="navLink" href="{% url 'home_page' %}">Home</a></li>
+        <li><a class="navLink" href="{% url 'about_page' %}">About</a></li>
+        <li><a class="navLink" href="{% url 'products' %}">Products</a></li>
+        <li><a class="navLink" href="{% url 'contacts_page' %}">Contacts</a></li>
+        <li><a class="navLink" href="{% url 'login_view' %}">Login</a></li>
+        <li><a class="navLink" href="{% url 'register_view' %}">Registrate</a></li>
+        <li><a class="navLink" href="{% url 'user_cabinet' %}">User</a></li>
+        <li><a class="navLink" href="{% url 'about_page' %}"><img src="{% static 'shop/icons/shopping-cart.png' %}" alt="Cart icon"></a></li>
+    </ul>
+</nav>
+
+
