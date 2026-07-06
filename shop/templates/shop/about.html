@@ -1,5 +1,32 @@
 {% extends "base/base.html" %}
 
 {% block main %}
-    <h1>About Page</h1>
+
+<div class="contentWrapper">
+    <h1 class="pageTitle">{{about.title}}</h1>
+    <div class="contentWrapperText">
+        <p class="bodyText">{{about.intro}}</p>
+        <p class="bodyText">{{about.mission}}</p>
+    </div>
+    <div class="contentWrapperSmall">
+        <h4 class="pageSubtitle">What we offer: </h4>
+        <ul class="aboutList"> 
+            {% for item in about.what_we_offer %}
+                <li class="aboutItem bodyText">{{item}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="contentWrapperSmall">
+        <h4 class="pageSubtitle">Our favorites: </h4>
+        <ul class="aboutList"> 
+            {% for dir in directors %}
+                <li class="aboutItem">
+                    <h6 class="prodTitle">{{dir.name}}</h6>
+                    <p class="bodyText">Style: {{dir.style}}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 {% endblock main %} 

@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-
+    text-decoration: none;
 }
 
 body {
@@ -56,12 +56,35 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    width: 100%;
 }
 
-.pageTitle {
-    margin-bottom: 2rem;
+
+/* HOME PAGE  */
+.hero {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.heroTitle {
+    font-size: 8rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.heroSubtitle {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+/* PRODUCTS PAGE */
 .productsList {
     width: 100%;
     display: flex;
@@ -70,8 +93,7 @@ main {
 
 .productItem {
     width: calc(33.3% - 2rem);
-    
-    min-height: 150px;
+    min-height: 200px;
     border: 1px solid rgba(220, 154, 1, 0.816);
     border-radius: 8px;
     background-color: #fae1ce;
@@ -83,9 +105,219 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+    &:hover{
+        border: 1px solid antiquewhite;
+        transform: scale(1.02);
+    }
 }
 
-.productLink {
+
+/* ABOUT PAGE */
+.aboutList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.aboutItem {
+    margin: 1rem;
+    padding: 1rem 0.5rem;
+    width: calc(50% - 2rem);
+    border: 0.5px solid rgba(248, 192, 51, 0.335);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+    &:hover{
+        border: 1px solid antiquewhite;
+        transform: scale(1.02);
+    }
+}
+
+
+/* CONTACTS */
+.socials_list {
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.socials_item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.icon {
+    display: inline-block;
+}
+
+/* LOGIN & REGISTRATION FORMS */
+.loginPageContent, .registrationPageContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 600px;
+    width: 600px;
+    border-radius: 8px;
+    padding-inline: clamp(16px, 4vw, 48px);
+    padding-block: clamp(30px, 4.5vw, 60px);
+    border: 1px solid rgba(220, 154, 1, 0.816);
+    background-color: #fae1ce;
+    color:#1f0e02;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: (15px);
+        z-index: 1;
+    }
+}
+
+#login-form, #register-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 2;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.formRowCheckbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+input[type=checkbox] {
+    accent-color: rgba(220, 154, 1, 0.816);
+}
+
+.wideInput {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    margin-top: -20px;
+    transition: margin-top 0.5s ease;
+    border: none;
+    border-bottom: 1px solid rgba(220, 154, 1, 0.816);
+    outline: none;
+    padding: 5px 10px;
+    font-size: 18px;
+    color:#1f0e02;
+    font-size: clamp(14px, 3.5vw, 20px);
+    &:focus {margin-top: 0;}
+    &:not(:placeholder-shown) {margin-top: 0;}
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    width: 100%;
+    height: 100px;
+    border-top: 0.5px solid rgba(220, 154, 1, 0.304);
+}
+
+
+/* COMMON STYLES */
+
+/* Wrappers */
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.contentWrapperSmall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.contentWrapperText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 80%;
+    text-align: center;
+}
+
+/* Polygraphy */
+
+.pageTitle {
+    margin-bottom: 1rem;
+    z-index: 10;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.pageSubtitle {
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+.prodTitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.bodyText {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.supportText {
+    color: #1f0e02;
+    letter-spacing: 0.05rem;
+}
+
+/* Links & Buttons */
+
+.goToLink {
+    display: inline-block;
+    margin: 0.5rem 0;
+    color:antiquewhite;
+    &:hover {
+        text-decoration: underline;
+        color: white;
+    }
+}
+
+.btnLink {
     display: block;
     text-decoration: none;
     color:antiquewhite;
@@ -99,13 +331,38 @@ main {
     }
 }
 
-
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btnAccent {
+    height: 40px;
     width: 100%;
-    height: 100px;
-    border-top: 0.5px solid rgba(220, 154, 1, 0.304);
+    background-color: #3e1d00;
+    cursor: pointer;
+    color:antiquewhite;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: none;
+    &:hover {
+        background-color: #542700;
+    }
 }
+
+.btnGhost {
+    height: 40px;
+    width: 100%;
+    background-color: antiquewhite;
+    cursor: pointer;
+    color:#1f0e02;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #3e1d00;
+    &:hover {
+        background-color: #3e1d00;
+        color: antiquewhite;
+    }
+}
+
+

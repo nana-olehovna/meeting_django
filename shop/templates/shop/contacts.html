@@ -1,5 +1,23 @@
 {% extends "base/base.html" %}
+{% load static %}
 
 {% block main %}
-    <h1>Contacts Page</h1>
+<div class="contentWrapper">
+    <h1 class="pageTitle">Reach Us</h1>
+    <h4 class="pageSubtitle">{{contacts.description}}</h4>
+    <div class="contentWrapperSmall">
+        <h6 class="prodTitle">{{contacts.email}}</h6>
+        <h6 class="prodTitle">{{contacts.phone}}</h6>
+    </div>
+    <div class="contentWrapperSmall">
+        <h6 class="prodTitle">{{contacts.address}}</h6>
+        <p class="bodyText">{{contacts.working_hours.weekdays}}</p>
+        <p class="bodyText">{{contacts.working_hours.weekends}}</p>
+    </div>
+    <ul class="contentWrapperSmall socials_list">
+        <li class="socials_item"><span class="icon"><img src="{% static 'shop/icons/instagram.png' %}" alt="instagram icon"></span><a class="goToLink" href="https://www.instagram.com/">{{contacts.socials.instagram}}</a></li>
+        <li class="socials_item"><span class="icon"><img src="{% static 'shop/icons/facebook.png' %}" alt="facebook icon"></span><a class="goToLink" href="https://www.facebook.com/">{{contacts.socials.facebook}}</a></li>
+        <li class="socials_item"><span class="icon"><img src="{% static 'shop/icons/twitter.png' %}" alt="twitter icon"></span><a class="goToLink" href="https://x.com/">{{contacts.socials.x}}</a></li>
+    </ul>
+</div>
 {% endblock main %} 
