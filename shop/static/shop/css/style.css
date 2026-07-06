@@ -113,6 +113,24 @@ main {
     }
 }
 
+.productItemPage {
+    width: 80%;
+    min-height: 500px;
+    display: flex;
+}
+
+.productImageWrapper {
+    max-width: 90%;
+    overflow: hidden;
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 /* ABOUT PAGE */
 .aboutList {
@@ -315,6 +333,12 @@ footer {
         text-decoration: underline;
         color: white;
     }
+}
+
+.goBackLink {
+    position: absolute;
+    top: calc(0.5rem + 80px);
+    left: 2rem;
 }
 
 .btnLink {

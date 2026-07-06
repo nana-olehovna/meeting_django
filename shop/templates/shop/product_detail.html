@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block main %}
+<a href="{% url 'products' %}"><span class="goToLink goBackLink"> <- Back to all movies</span></a>
+<div class="productItem productItemPage">
+    <h1 class="pageTitle">{{movie.title}}</h1>
+    <span class="supportText">{{movie.year}}</span>
+    <div class="productImageWrapper">
+        <img class="productImage" src="{% static movie.image %}" alt="{{movie.title}} image">
+    </div>
+    <div class="contentWrapperText">
+        <p class="bodyText">{{movie.description}}</p>
+    </div>
+    <div class="contentWrapperText">
+        <span class="supportText">Rating: {{movie.rating}}</span>
+        <button class="btnLink" type="button">Rent for {{movie.price}} CZK</button>
+    </div>
+</div>
+
+{% endblock main %}
