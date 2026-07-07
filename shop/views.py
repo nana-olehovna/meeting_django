@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .contexts import home_context, top_movies, about_info, directors, contacts_info, movies
+from .contexts import home_context, top_movies, about_info, directors, contacts_info, movies, user
 
 # Create your views here.
 
@@ -49,5 +49,38 @@ def logout_view(request):
 def cart(request):
     return render(request, "shop/cart.html")
 
+
+#USER
+
 def user_cabinet(request):
-    return render(request, "shop/user_cabinet.html")
+    context = {"user" : user}
+    return render(request, "user_personal/user_cabinet.html", context)
+
+def user_profile(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_profile.html", context)
+
+def user_rents(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_rents.html", context)
+
+def user_history(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_history.html", context)
+
+def user_favorites(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_favorites.html", context)
+
+def user_membership(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_membership.html", context)
+
+def user_wallet(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_wallet.html", context)
+
+def user_settings(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_settings.html", context)
+

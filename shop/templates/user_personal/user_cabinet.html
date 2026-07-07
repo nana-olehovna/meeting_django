@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block main %}
+    <div class="userCabinetWrapper">
+        <aside class='userAside'>
+            {% include "includes/UserNav.html" %}
+        </aside>
+        <div class="userContent">
+            {% block user_cabinet %}
+
+            {% endblock user_cabinet %}
+        </div>
+    </div>
+{% endblock main %} 

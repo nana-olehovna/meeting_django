@@ -212,3 +212,12 @@ contacts_info = {
 }
 
 
+#USER INFO
+user = {
+    "name": "Lilia",
+    "email": "lilia68@gmail.com",
+    "phone": "420485935859",
+    "password": "password",
+    "balance": 200,
+    
+}
