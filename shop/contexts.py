@@ -2,6 +2,7 @@ movies = [
     {
         "id": 1,
         "title": "Pulp Fiction",
+        "category": "Crime",
         "year": 1994,
         "price": 79,
         "description": "A nonlinear crime story about intersecting lives of criminals in Los Angeles.",
@@ -12,6 +13,7 @@ movies = [
     {
         "id": 2,
         "title": "Kill Bill: Vol. 1",
+        "category": "Action",
         "year": 2003,
         "price": 69,
         "description": "A revenge-driven assassin embarks on a brutal mission against her former team.",
@@ -22,6 +24,7 @@ movies = [
     {
         "id": 3,
         "title": "The Hateful Eight",
+        "category": "Western",
         "year": 2015,
         "price": 89,
         "description": "Strangers trapped in a cabin during a blizzard reveal hidden motives and tensions.",
@@ -32,6 +35,7 @@ movies = [
     {
         "id": 4,
         "title": "Inglourious Basterds",
+        "category": "War",
         "year": 2009,
         "price": 89,
         "description": "A group of Jewish-American soldiers plans to assassinate Nazi leaders in WWII France.",
@@ -42,6 +46,7 @@ movies = [
     {
         "id": 5,
         "title": "Django Unchained",
+        "category": "Western",
         "year": 2012,
         "price": 99,
         "description": "A freed slave teams up with a bounty hunter to rescue his wife from a plantation owner.",
@@ -49,10 +54,10 @@ movies = [
         "isInStock": True,
         "image": "shop/images/5.png"
     },
-
     {
         "id": 6,
         "title": "Lock, Stock and Two Smoking Barrels",
+        "category": "Crime",
         "year": 1998,
         "price": 69,
         "description": "Four friends become entangled with gangsters after a high-stakes card game goes terribly wrong.",
@@ -63,6 +68,7 @@ movies = [
     {
         "id": 7,
         "title": "Snatch",
+        "category": "Crime",
         "year": 2000,
         "price": 79,
         "description": "A stolen diamond, underground boxing, and colorful criminals collide in London.",
@@ -73,6 +79,7 @@ movies = [
     {
         "id": 8,
         "title": "RocknRolla",
+        "category": "Crime",
         "year": 2008,
         "price": 75,
         "description": "A real estate scam draws criminals, politicians, and gangsters into a chaotic battle.",
@@ -83,6 +90,7 @@ movies = [
     {
         "id": 9,
         "title": "The Gentlemen",
+        "category": "Crime",
         "year": 2019,
         "price": 99,
         "description": "An American drug lord tries to sell his cannabis empire, sparking a web of schemes and betrayals.",
@@ -93,6 +101,7 @@ movies = [
     {
         "id": 10,
         "title": "Sherlock Holmes",
+        "category": "Mystery",
         "year": 2009,
         "price": 85,
         "description": "Sherlock Holmes and Dr. Watson investigate a mysterious criminal conspiracy in Victorian London.",
@@ -100,10 +109,10 @@ movies = [
         "isInStock": False,
         "image": "shop/images/10.png"
     },
-
     {
         "id": 11,
         "title": "Memento",
+        "category": "Thriller",
         "year": 2000,
         "price": 79,
         "description": "A man with short-term memory loss searches for his wife's killer using notes and tattoos.",
@@ -114,6 +123,7 @@ movies = [
     {
         "id": 12,
         "title": "The Prestige",
+        "category": "Drama",
         "year": 2006,
         "price": 89,
         "description": "Two rival magicians push obsession and sacrifice to dangerous extremes.",
@@ -124,6 +134,7 @@ movies = [
     {
         "id": 13,
         "title": "The Dark Knight",
+        "category": "Action",
         "year": 2008,
         "price": 99,
         "description": "Batman faces the Joker, a criminal mastermind determined to plunge Gotham into chaos.",
@@ -134,6 +145,7 @@ movies = [
     {
         "id": 14,
         "title": "Inception",
+        "category": "Science Fiction",
         "year": 2010,
         "price": 99,
         "description": "A skilled thief enters dreams to steal secrets but is offered one last impossible mission.",
@@ -144,6 +156,7 @@ movies = [
     {
         "id": 15,
         "title": "Interstellar",
+        "category": "Science Fiction",
         "year": 2014,
         "price": 109,
         "description": "A team of astronauts travels through a wormhole to find a new home for humanity.",
