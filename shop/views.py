@@ -1,67 +1,86 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .contexts import home_context, top_movies, about_info, directors, contacts_info, movies, user
 
 # Create your views here.
 
-movies = [
-    {
-        "id": 1,
-        "title": "Pulp Fiction",
-        "year": 1994,
-        "price": 79
-    },
-    {
-        "id": 2,
-        "title": "Kill Bill: Vol. 1",
-        "year": 2003,
-        "price": 69
-    },
-    {
-        "id": 3,
-        "title": "The Hateful Eight",
-        "year": 2015,
-        "price": 89
-    },
-    {
-        "id": 4,
-        "title": "Inglourious Basterds",
-        "year": 2009,
-        "price": 89
-    },
-    {
-        "id": 5,
-        "title": "Django Unchained",
-        "year": 2012,
-        "price": 99
-    }
-]
+
 
 def index(request):
-    return HttpResponse("<h1>Here will be THE MAIN PAGE</h1>")
+    context = {
+        "home": home_context,
+        "top_movies": top_movies
+    }
+    return render(request, "shop/home.html", context)
 
 def about(request):
-    return HttpResponse("<h1>Here will be ABOUT PAGE</h1>")
+    context = {
+        "about": about_info,
+        "directors": directors
+    }
+    return render(request, "shop/about.html", context)
 
-def contact(request):
-    return HttpResponse("<h1>Here will be CONTACT PAGE</h1>")
+def contacts(request):
+    context = {
+        "contacts": contacts_info
+    }
+    return render(request, "shop/contacts.html", context)
 
 def product_list(request):
-    text = f"<h1>The movies you can rent:</h1> <br>"
-    for m in movies:
-        text += f"{m['title']}: {m['price']} CZK <br>"
-    return HttpResponse(text)
+    context = {"movies": movies}
+    return render(request, 'shop/products.html', context)
 
 def product_detail(request, pk):
     for m in movies:
-        if m['id'] == pk:
-            return HttpResponse(f"The movie title: {m["title"]} <br> The year: {m['year']} <br> The price for renting: {m['price']} <br> {m['id']}")
+        if m["id"] == pk:
+            context = {"movie" : m}
+            return render(request, "shop/product_detail.html", context)
     return HttpResponse("<h1>Movie not found!</h1>")
 
 def login_view(request):
-    return HttpResponse("<h1>Here will be LOGIN FORM</h1>")
+    return render(request, "shop/login.html")
 
 def register_view(request):
-    return HttpResponse("<h1>Here will be REGISTRATION FORM</h1>")
+    return render(request, "shop/registration.html")
 
 def logout_view(request):
     return HttpResponse("<h1>Here will be LOGOUT PAGE</h1>")
+
+def cart(request):
+    return render(request, "shop/cart.html")
+
+
+#USER
+
+def user_cabinet(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_cabinet.html", context)
+
+def user_profile(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_profile.html", context)
+
+def user_rents(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_rents.html", context)
+
+def user_history(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_history.html", context)
+
+def user_favorites(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_favorites.html", context)
+
+def user_membership(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_membership.html", context)
+
+def user_wallet(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_wallet.html", context)
+
+def user_settings(request):
+    context = {"user" : user}
+    return render(request, "user_personal/user_settings.html", context)
+

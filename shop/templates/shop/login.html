@@ -1,0 +1,28 @@
+{% extends "base/base.html" %}
+
+{% block main %}
+    <div class="loginPageContent">
+      <h1 class="pageTitle">Login</h1>
+
+      <form method="post" id="login-form" novalidate>
+
+        <label class="formRow"> 
+          <p class="supportText">Email: </p>
+          <input type="email" name="email" placeholder=" " class="wideInput"/>
+        </label>
+
+        <label class="formRow"> 
+          <p class="supportText">Password</p>
+          <input type="password" name="password" placeholder=" " class="wideInput"/>
+        <a href="{% url 'login_view' %}" class="supportText goToLink">Forgot password?</a>
+        </label>
+
+        <button id="login-submit-btn" class="btnAccent" type="button">Login</button>
+
+        <p class="supportText">Not a member yet</p>
+
+        <a class="btnLink btnGhost" href="{% url 'register_view' %}">Registrate</a>
+
+      </form>
+    </div>
+{% endblock main %}

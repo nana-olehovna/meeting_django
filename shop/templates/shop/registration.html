@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+
+{% block main %}
+    <div class="registrationPageContent">
+      <h1 class="pageTitle">Registrate</h1>
+
+      <form method="post" id="register-form" novalidate>
+
+        <label class="formRow"> 
+          <p class="supportText">Email: </p>
+          <input type="email" name="email" placeholder=" " class="wideInput"/>
+        </label>
+
+        <label class="formRow"> 
+          <p class="supportText">Password :</p>
+          <input type="password" name="password" placeholder=" " class="wideInput"/>
+        </label>
+
+        <label class="formRow"> 
+          <p class="supportText">Confirm password :</p>
+          <input type="password" name="confirm_password" placeholder=" " class="wideInput"/>
+        </label>
+
+        <label class="formRowCheckbox">
+          <input type="checkbox" name="subscribe"/> 
+          <span class="supportText">I accept Terms of Using</span>
+        </label>
+
+        <button id="register-submit-btn" class="btnAccent" type="button">Registrate</button>
+
+        <p class="supportText">Already a member?</p>
+
+        <a class="btnLink btnGhost" href="{% url 'login_view' %}">Login</a>
+
+      </form>
+    </div>
+{% endblock main %} 
